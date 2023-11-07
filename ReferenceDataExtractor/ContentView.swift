@@ -82,6 +82,10 @@ struct ContentView: View {
                 .focusable()
                 .toolbar {
                     Button(action: {
+                        if selection.count == 0 {
+                            return
+                        }
+                        
                         var output = "name,url,latlong\n"
                         mapItems
                             .filter {
